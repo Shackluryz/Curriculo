@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import foto from './assets/perfil.jpg';
+import Card from './components/Card'
 
 const App = () => {
   async function handleIcon(icon) {
@@ -64,38 +65,14 @@ const App = () => {
             </TouchableOpacity>
           </View>
         </View>
-
-        <View style={style.card_container}>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text>Experiencia Profissional</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>
-                Desenvolvedor - Fabrica de Softwares
-              </Text>
-              <Text style={style.card_content_text}>
-                Estágio em TI - Senado Federal
-              </Text>
-            </View>
-          </View>
-        </View>
-
-        <View style={style.card_container}>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text>Formação Academica</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>
-                Engenharia de Software - UniProjeção
-              </Text>
-              <Text style={style.card_content_text}>
-                Desenvolvedor Mobile - Senai
-              </Text>
-            </View>
-          </View>
-        </View>
+        <Card titulo="Formação Academica">
+          <Text style={style.card_content_text}>Engenharia de Software - UniProjeção</Text>
+          <Text style={style.card_content_text}>Desenvolvedor Mobile - Senai</Text>
+        </Card>
+        <Card titulo="Experiencia Profissional">
+          <Text style={style.card_content_text}>Desenvolvedor - Fabrica de Softwares</Text>
+          <Text style={style.card_content_text}>Estágio em TI - Senado Federal</Text>
+        </Card>
       </SafeAreaView>
     </>
   );
@@ -117,6 +94,8 @@ const style = StyleSheet.create({
     width: 250,
     height: 250,
     borderRadius: 125,
+    borderColor: 'white',
+    borderWidth: 3,
   },
   nome: {
     fontSize: 26,
@@ -131,28 +110,6 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '40%',
-    marginTop: 20,
-  },
-  card_container: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20,
-  },
-  card_header: {
-    width: '60%',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  card: {
-    width: '70%',
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#FFF',
-  },
-  card_content: {
     marginTop: 20,
   },
   card_content_text: {
